@@ -5,16 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfControllerStudy"
         mc:Ignorable="d"
-        Title="MainWindow" Height="424" Width="800">
+        Title="MainWindow" Height="439" Width="800">
     <Grid>
-        <Label x:Name="lbTest" Content="MyLabel" HorizontalAlignment="Left" Margin="47,77,0,0" VerticalAlignment="Top" Height="45" Width="193"/>
+        <Label x:Name="lbTest" Content="MyLabel" HorizontalAlignment="Left" Margin="47,77,0,0" VerticalAlignment="Top" Height="45" Width="193">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.4">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FFFFF606"/>
+                    <GradientStop Color="White" Offset="0.979"/>
+                    <GradientStop Color="#FFE6E04B" Offset="0.511"/>
+                    <GradientStop Color="#FFECE546" Offset="0.751"/>
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
         <Button x:Name="BtnTest" Content="Button" HorizontalAlignment="Left" Margin="48,33,0,0" VerticalAlignment="Top" Height="39" Width="96" Click="Button_Click"/>
         <CheckBox x:Name="CheckBoxTest" Content="나의 체크박스" HorizontalAlignment="Left" Margin="47,122,0,0" VerticalAlignment="Top" Height="35" Width="156"/>
         <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="47,145,0,0" VerticalAlignment="Top" GroupName="MyGroup"/>
         <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="47,165,0,0" VerticalAlignment="Top" GroupName="MyGroup"/>
         <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="47,185,0,0" VerticalAlignment="Top" GroupName="MyGroup"/>
-         <PasswordBox HorizontalAlignment="Left" Margin="30,251,0,0" VerticalAlignment="Top" Width="120"/>
-        <ListView x:Name="ListView_modelTest" Margin="260,36,50,151">
+        <PasswordBox HorizontalAlignment="Left" Margin="30,251,0,0" VerticalAlignment="Top" Width="120"/>
+        <ListView x:Name="ListView_modelTest" Margin="260,36,50,0" VerticalAlignment="Top" Height="233">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="이미지" Width="300">
