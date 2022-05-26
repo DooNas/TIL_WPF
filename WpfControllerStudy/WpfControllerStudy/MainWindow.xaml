@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfControllerStudy"
         mc:Ignorable="d"
-        Title="MainWindow" Height="439" Width="800">
+        Title="MainWindow" Height="468" Width="800">
     <Window.Resources>
         <Style x:Key="testStyle">
             <Setter Property="Label.Background">
@@ -19,6 +19,18 @@
                     </LinearGradientBrush>
                 </Setter.Value>
             </Setter>
+            <Style.Triggers>
+                <!--<Trigger Property="Control.IsMouseOver" Value="True">
+                    <Setter Property="Control.Foreground" Value="Blue"/>
+                </Trigger>-->
+                <!--<DataTrigger Binding="{Binding ElementName=CheckBoxTest, Path=IsChecked}" Value="True">
+                    <Setter Property="Control.Foreground" Value="Red"/>
+                    <Setter Property="Control.Visibility" Value="Hidden"/>
+                </DataTrigger>-->
+                <DataTrigger Binding="{Binding ElementName=progressbar,Path=Value}" Value="100">
+                    <Setter Property="Control.Visibility" Value="Hidden"/>
+                </DataTrigger>
+            </Style.Triggers>
         </Style>
     </Window.Resources>
     <Grid>
@@ -28,7 +40,7 @@
         <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="47,145,0,0" VerticalAlignment="Top" GroupName="MyGroup"/>
         <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="47,165,0,0" VerticalAlignment="Top" GroupName="MyGroup"/>
         <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="47,185,0,0" VerticalAlignment="Top" GroupName="MyGroup"/>
-        <PasswordBox HorizontalAlignment="Left" Margin="30,251,0,0" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="49,0,0,0" VerticalAlignment="Center" Width="120"/>
         <ListView x:Name="ListView_modelTest" Margin="260,36,50,0" VerticalAlignment="Top" Height="233">
             <ListView.View>
                 <GridView>
@@ -47,6 +59,8 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Content="안녕" Margin="191,310,495,87" Style="{StaticResource testStyle}"/>
+        <Button x:Name="BtnTest_Copy" Content="Button" Style="{StaticResource testStyle}" HorizontalAlignment="Center" Margin="0,373,0,0" VerticalAlignment="Top" Height="40" Width="702" Command="{Binding TestClick}" CommandParameter="{Binding ElementName=testbox1,Path=Text}"/>
+        <ProgressBar x:Name="progressbar" HorizontalAlignment="Center" Height="23" Margin="0,331,0,0" VerticalAlignment="Top" Width="700" Value="{Binding ProgressValue}"/>
+        <TextBox x:Name="testbox1" HorizontalAlignment="Left" Margin="49,251,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="191" Height="59"/>
     </Grid>
 </Window>
